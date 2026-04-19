@@ -1,0 +1,46 @@
+{
+    "questions": [
+        {
+            "questionText": "Které město má největší konzumaci metanfetaminu v EU?",
+            "answers": [
+                {
+                    "text": "Most",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Ústí nad Labem",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Ostrava",
+                    "isCorrect": false
+                },
+                {
+                    "text": "České Budějovice",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "questionText": "Jaký alkohol je vyráběn ze švestek?",
+            "answers": [
+                {
+                    "text": "Borovička",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Rum",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Slivovice",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Víno ",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}
