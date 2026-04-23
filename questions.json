@@ -41,6 +41,153 @@
                     "isCorrect": false
                 }
             ]
+        },
+        {
+            "questionText": "Kolik litrů piva vypije průměrný čech za rok?",
+            "answers": [
+                {
+                    "text": "62-80",
+                    "isCorrect": false
+                },
+                {
+                    "text": "126-136",
+                    "isCorrect": true
+                },
+                {
+                    "text": "38-46",
+                    "isCorrect": false
+                },
+                {
+                    "text": "148-152 ",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "questionText": "Jaký populární nealkoholický nápoj vznikl v Československu jako alternativa ke západním kolovým nápojům?",
+            "answers": [
+                {
+                    "text": "Vinea",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Kofola",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Zonka",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Aro Cola",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "questionText": "Co znamená slovo „šalina“ v brněnském hantecu?",
+            "answers": [
+                {
+                    "text": "Tramvaj",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Vlak",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Hospoda",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Nadávka",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "questionText": "Jaký módní prohřešek je stereotypně nejvíce spojován s českými turisty v Chorvatsku?",
+            "answers": [
+                {
+                    "text": "Ledvinka přes rameno",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Tričko zastrčené do tepláků",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Ponožky v sandálech",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Kšiltovka dozadu",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "questionText": "Které české slovo se díky bratřím Čapkům rozšířilo do celého světa?",
+            "answers": [
+                {
+                    "text": "Pistole",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Tunel",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Dolar",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Robot",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "questionText": "Který tradiční český bylinný likér má svůj domov v Karlových Varech?",
+            "answers": [
+                {
+                    "text": "Fernet Stock",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Becherovka",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Stará myslivecká",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Zelená",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "questionText": "Jaký zrající sýr je celosvětově známý (a občas proklínaný) pro svůj velmi specifický a silný zápach?",
+            "answers": [
+                {
+                    "text": "Hermelín",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Olomoucké tvarůžky",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Niva",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Balkánský sýr",
+                    "isCorrect": false
+                }
+            ]
         }
     ]
 }
