@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById("submitBtn");
     const buttonsContainer = document.querySelector(".buttons");
 
+    const errorMessage = document.createElement("div");
+    errorMessage.style.color = "#dc2626";
+    errorMessage.style.fontWeight = "bold";
+    errorMessage.style.textAlign = "center";
+    errorMessage.style.marginBottom = "10px";
+    errorMessage.style.display = "none";
+
+    buttonsContainer.parentNode.insertBefore(errorMessage, buttonsContainer);
+
     async function loadQuestions() {
         try {
             const response = await fetch('questions.json');
@@ -21,7 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             quizData = await response.json();
-            userSelect = new Array(quizData.questions.length).fill(null);
+
+            const savedAnswers = sessionStorage.getItem('quizAnswers');
+            const savedSubmitState = sessionStorage.getItem('isQuizSubmitted');
+
+            if (savedAnswers) {
+                userSelect = JSON.parse(savedAnswers);
+            } else {
+                userSelect = new Array(quizData.questions.length).fill(null);
+            }
+
+            if (savedSubmitState === 'true') {
+                isQuizSubmitted = true;
+            }
 
             renderQuestion();
         } catch (error) {
@@ -39,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (buttonsContainer) {
                 buttonsContainer.style.display = "none";
             }
+            errorMessage.style.display = "none";
 
             quizData.questions.forEach((q, qIndex) => {
                 const questionBlock = document.createElement('div');
@@ -80,6 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 formElem.appendChild(questionBlock);
             });
 
+            const restartBtn = document.createElement("button");
+            restartBtn.innerText = "Spustit znovu";
+            restartBtn.className = "btn btn-submit";
+            restartBtn.style.marginTop = "20px";
+            restartBtn.addEventListener("click", () => {
+                sessionStorage.removeItem("quizAnswers");
+                sessionStorage.removeItem("isQuizSubmitted");
+                location.reload();
+            });
+            formElem.appendChild(restartBtn);
+
         }
         else {
             const currentQuestion = quizData.questions[currentQuestionIndex];
@@ -99,6 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 radio.addEventListener('change', () => {
                     userSelect[currentQuestionIndex] = index;
+
+                    sessionStorage.setItem('quizAnswers', JSON.stringify(userSelect));
+
+                    errorMessage.style.display = "none";
                 });
 
                 const label = document.createElement('label');
@@ -126,22 +163,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const unansweredIndex = userSelect.findIndex(val => val === null);
 
         if (unansweredIndex !== -1) {
-            alert(`Nemáte vyplněnou otázku číslo ${unansweredIndex + 1}!`);
+            errorMessage.innerText = `Nemáte vyplněnou otázku číslo ${unansweredIndex + 1}!`;
+            errorMessage.style.display = "block";
+
             currentQuestionIndex = unansweredIndex;
             renderQuestion();
             return;
         }
 
+        errorMessage.style.display = "none";
         isQuizSubmitted = true;
+
+        sessionStorage.setItem('isQuizSubmitted', 'true');
+
         renderQuestion();
     });
 
     prevBtn.addEventListener('click', () => {
+        errorMessage.style.display = "none";
         currentQuestionIndex--;
         renderQuestion();
     });
 
     nextBtn.addEventListener('click', () => {
+        errorMessage.style.display = "none";
         currentQuestionIndex++;
         renderQuestion();
     });

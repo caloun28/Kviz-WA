@@ -188,6 +188,27 @@
                     "isCorrect": false
                 }
             ]
+        },
+        {
+            "questionText": "Která hora je nejvyšší v České republice?",
+            "answers": [
+                {
+                    "text": "Praděd",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Sněžka",
+                    "isCorrect": true
+                },
+                {
+                    "text": "Lysá hora",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Klínovec",
+                    "isCorrect": false
+                }
+            ]
         }
     ]
 }
